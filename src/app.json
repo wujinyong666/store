@@ -1,0 +1,41 @@
+{
+    "pages": [
+        "pages/nails/main",
+        "pages/serve/main",
+        "pages/production/main",
+        "pages/details/main"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "美美工作室",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#999",
+        "backgroundColor": "#fafafa",
+        "selectedColor": "#d4237a",
+        "borderStyle": "white",
+        "list": [
+            {
+                "text": "做美甲",
+                "pagePath": "pages/nails/main",
+                "iconPath": "static/tabs/meijia.png",
+                "selectedIconPath": "static/tabs/meijia1.png"
+            },
+            {
+                "text": "做服务",
+                "pagePath": "pages/serve/main",
+                "iconPath": "static/tabs/fuwu.png",
+                "selectedIconPath": "static/tabs/fuwu1.png"
+            },
+            {
+                "text": "作品集",
+                "pagePath": "pages/production/main",
+                "iconPath": "static/tabs/zuoping.png",
+                "selectedIconPath": "static/tabs/zuoping1.png"
+            }
+        ],
+        "position": "bottom"
+    }
+}

@@ -1,0 +1,55 @@
+.container {
+    padding: 10px;
+
+    .content {
+        width: 100%;
+        min-height: 600px;
+    }
+    .panel {
+        width: 100%;
+        height: 150px;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(3, 3, 3, 0.2), 0 0 20px rgba(3, 3, 3, 0.1) inset;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+    }
+    .img-box {
+        width: 65%;
+        img {
+            width:100%;
+            height: 100%;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(3, 3, 3, 0.2)
+        }
+    }
+
+    .serve-intr {
+        flex: 1;
+        display: flex;
+    }
+    .inner-content {
+        align-self: center;
+        width: 80%;
+        margin: 0 auto;
+
+        p {
+            font-size: 16px;
+        }
+
+        div {
+            background: #d4237a;
+            opacity: 0.5;
+            width: 50%;
+            margin-top: 10px;
+            padding: 0 5px;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            span:first-child {
+                font-size: 10px;
+                margin-right: 3px;
+            }
+        }
+    }
+}
