@@ -24,16 +24,16 @@
                 "selectedIconPath": "static/tabs/meijia1.png"
             },
             {
+                "text": "预约",
+                "pagePath": "pages/production/main",
+                "iconPath": "static/tabs/zuoping.png",
+                "selectedIconPath": "static/tabs/zuoping1.png"
+            },
+            {
                 "text": "做服务",
                 "pagePath": "pages/serve/main",
                 "iconPath": "static/tabs/fuwu.png",
                 "selectedIconPath": "static/tabs/fuwu1.png"
-            },
-            {
-                "text": "作品集",
-                "pagePath": "pages/production/main",
-                "iconPath": "static/tabs/zuoping.png",
-                "selectedIconPath": "static/tabs/zuoping1.png"
             }
         ],
         "position": "bottom"
