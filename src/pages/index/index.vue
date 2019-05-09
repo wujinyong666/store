@@ -1,132 +1,98 @@
+<!--首页-->
 <template>
-    <div @click="clickHandle">
-
-        <div class="userinfo" @click="bindViewTap">
-            <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover"/>
-            <img class="userinfo-avatar" src="/static/images/user.png" background-size="cover"/>
-
-            <div class="userinfo-nickname">
-                <card :text="userInfo.nickName"></card>
+    <div class="index-page">
+        <header class="flex">
+            <div class="logo mr10">
+                <img src="../../../static/images/logo.png" alt="">
             </div>
+            <div class="store-info">
+                <h2>美美哒美丽中心</h2>
+                <p class="goods-info">
+                    <span><span class="count">10</span>项服务</span>
+                    <span class="gap">|</span>
+                    <span><span class="count">50</span>件商品</span>
+                    <span class="gap">|</span>
+                    <span>服务<span class="count">10000+</span>人次</span>
+                </p>
+                <p class="location flex">
+                    <img src="../../../static/images/location.png" alt="" class="mr5">
+                    <span>深圳市宝安区xxx路xx花园xx号</span>
+                </p>
+            </div>
+        </header>
+        <div class="banner">
+            <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+                <block v-for="(item, index) in bannerList" :index="index" :key="key">
+                    <swiper-item>
+                        <image :src="item.url" class="slide-image" mode="aspectFill"/>
+                    </swiper-item>
+                </block>
+            </swiper>
         </div>
-
-        <div class="usermotto">
-            <div class="user-motto">
-                <card :text="motto"></card>
-            </div>
-        </div>
-
-        <p>wujinyong</p>
-        <Button type="primary">test</Button>
-
-        <form class="form-container">
-            <input type="text" class="form-control" :value="motto" placeholder="v-model"/>
-            <input type="text" class="form-control" v-model="motto" placeholder="v-model"/>
-            <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy"/>
-        </form>
-
-        <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
-
-        <div class="all">
-            <div class="left">
-            </div>
-            <div class="right">
+        <div class="tabs flex mb10 mt10">
+            <div v-for="(item, index) in tabsList" :key="index" @click="toggleTab(index)" :class="item.active ? 'active' : ''">
+                {{ item.name }}
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import card from "@/components/card";
-
     export default {
-        data() {
+        data () {
             return {
-                motto: "Hello miniprograme",
-                userInfo: {
-                    nickName: "mpvue",
-                    avatarUrl: "http://mpvue.com/assets/logo.png"
-                }
+                bannerList: [
+                    {
+                      id: 1,
+                      url: 'http://m.qpic.cn/psb?/V14IXSk615MNiG/0nNTdm4diY0WWOhWrKL*isTIeb0RaEhC8o0dgsOocVo!/b/dFIBAAAAAAAA&bo=IAMVAgAAAAARFxQ!&rf=viewer_4',
+                    },
+                    {
+                        id: 2,
+                        url: 'http://m.qpic.cn/psb?/V14IXSk615MNiG/55*YxBS2JGj5eht.T3PW7VEop8OzUWxdxnrCPkmgMrA!/b/dL8AAAAAAAAA&bo=IAMVAgAAAAARFxQ!&rf=viewer_4',
+                    },
+                    {
+                        id: 3,
+                        url: 'http://m.qpic.cn/psb?/V14IXSk615MNiG/Y.TIRCAikmpFfjO6QutQwafYiGJv6vq.qXpUFiDsvFY!/b/dMAAAAAAAAAA&bo=IAMVAgAAAAARFxQ!&rf=viewer_4',
+                    },
+                ],
+                tabsList: [
+                    {
+                        id: 1,
+                        name: '服务项目',
+                        active: true,
+                    },
+                    {
+                        id: 2,
+                        name: '商品列表',
+                        active: false,
+                    },
+                    {
+                        id: 3,
+                        name: '优惠活动',
+                        active: false,
+                    },
+                ],
             };
         },
 
-        components: {
-            card
+        created () {
+
         },
 
         methods: {
-            bindViewTap() {
-                const url = "../logs/main";
-                if (mpvuePlatform === "wx") {
-                    mpvue.switchTab({ url });
-                } else {
-                    mpvue.navigateTo({ url });
-                }
-            },
-            clickHandle(ev) {
-                console.log("clickHandle:", ev);
-                // throw {message: 'custom test'}
-            }
-        },
 
-        created() {
-            // let app = getApp()
-        }
+            toggleTab (index) {
+                this.tabsList.forEach(item => {
+                    item.active = false;
+                });
+                this.tabsList[index].active = true;
+            },
+
+        }, // methods end
     };
 </script>
 
-<style scoped>
-    .userinfo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .userinfo-avatar {
-        width: 128 rpx;
-        height: 128 rpx;
-        margin: 20 rpx;
-        border-radius: 50%;
-    }
-
-    .userinfo-nickname {
-        color: #aaa;
-    }
-
-    .usermotto {
-        margin-top: 150px;
-    }
-
-    .form-control {
-        display: block;
-        padding: 0 12px;
-        margin-bottom: 5px;
-        border: 1px solid #ccc;
-    }
-
-    .all {
-        width: 7.5rem;
-        height: 1rem;
-        background-color: blue;
-    }
-
-    .all:after {
-        display: block;
-        content: '';
-        clear: both;
-    }
-
-    .left {
-        float: left;
-        width: 3rem;
-        height: 1rem;
-        background-color: red;
-    }
-
-    .right {
-        float: left;
-        width: 4.5rem;
-        height: 1rem;
-        background-color: green;
-    }
+<style lang="less">
+    @import '../../../static/css/common';
+    @import "index";
 </style>

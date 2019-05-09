@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/index/main",
         "pages/nails/main",
         "pages/serve/main",
         "pages/production/main",
@@ -8,7 +9,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "美美工作室",
+        "navigationBarTitleText": "美美哒",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {
@@ -18,10 +19,10 @@
         "borderStyle": "white",
         "list": [
             {
-                "text": "做美甲",
-                "pagePath": "pages/nails/main",
-                "iconPath": "static/tabs/meijia.png",
-                "selectedIconPath": "static/tabs/meijia1.png"
+                "text": "首页",
+                "pagePath": "pages/index/main",
+                "iconPath": "static/tabs/index.png",
+                "selectedIconPath": "static/tabs/index-active.png"
             },
             {
                 "text": "预约",
@@ -30,10 +31,16 @@
                 "selectedIconPath": "static/tabs/zuoping1.png"
             },
             {
-                "text": "做服务",
+                "text": "订单",
                 "pagePath": "pages/serve/main",
-                "iconPath": "static/tabs/fuwu.png",
-                "selectedIconPath": "static/tabs/fuwu1.png"
+                "iconPath": "static/tabs/order.png",
+                "selectedIconPath": "static/tabs/order-active.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "pages/serve/main",
+                "iconPath": "static/tabs/my.png",
+                "selectedIconPath": "static/tabs/my-active.png"
             }
         ],
         "position": "bottom"
