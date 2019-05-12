@@ -12,7 +12,7 @@
                     <span class="gap">|</span>
                     <span><span class="count">50</span>件商品</span>
                     <span class="gap">|</span>
-                    <span>服务<span class="count">10000+</span>人次</span>
+                    <span><span class="count">99999+</span>人次</span>
                 </p>
                 <p class="location flex">
                     <img src="../../../static/images/location.png" alt="" class="mr5">
@@ -29,16 +29,35 @@
                 </block>
             </swiper>
         </div>
-        <div class="tabs flex mb10 mt10">
-            <div v-for="(item, index) in tabsList" :key="index" @click="toggleTab(index)" :class="item.active ? 'active' : ''">
+        <div class="tabs flex mt10">
+            <div v-for="(item, index) in tabsList" :key="index" @click="toggleTab(item)" :class="item.id === currentTab ? 'active' : ''">
                 {{ item.name }}
+            </div>
+        </div>
+        <div class="product">
+            <div class="search-box">
+                <input confirm-type="search" v-model="keyword" :placeholder="'搜索本店所有' + placeholderKeyList[currentTab]" @confirm="confirm($event)" >
+                <img src="../../../static/images/search.png" alt="" @click="searchHandle(keyword)">
+            </div>
+            <div class="product-box mt10">
+                <service v-if="currentTab === 1"></service>
+                <goods v-if="currentTab === 2"></goods>
+                <activity v-if="currentTab === 3"></activity>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import service from '@/components/service/service'
+    import goods from '@/components/goods/goods'
+    import activity from '@/components/activity/activity'
     export default {
+        components: {
+            service,
+            goods,
+            activity,
+        },
         data () {
             return {
                 bannerList: [
@@ -59,19 +78,23 @@
                     {
                         id: 1,
                         name: '服务项目',
-                        active: true,
                     },
                     {
                         id: 2,
                         name: '商品列表',
-                        active: false,
                     },
                     {
                         id: 3,
                         name: '优惠活动',
-                        active: false,
                     },
                 ],
+                currentTab: 1, // 当前选项卡 1-服务项目 2-商品列表 3-优惠活动
+                keyword: '',
+                placeholderKeyList: {
+                    1: '服务',
+                    2: '商品',
+                    3: '优惠活动'
+                },
             };
         },
 
@@ -81,11 +104,18 @@
 
         methods: {
 
-            toggleTab (index) {
-                this.tabsList.forEach(item => {
-                    item.active = false;
-                });
-                this.tabsList[index].active = true;
+            toggleTab (data) {
+               this.currentTab = data.id;
+            },
+
+            // 搜索
+            confirm (e) {
+                console.log(e.target.value)
+            },
+
+            // 搜索
+            searchHandle (val) {
+                console.log(val);
             },
 
         }, // methods end

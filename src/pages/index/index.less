@@ -32,6 +32,7 @@
     .banner {
         .slide-image {
             width: 100%;
+            height: 300px;
         }
     }
     .tabs {
@@ -44,5 +45,35 @@
                 border-bottom: 4px solid @mainColor;
             }
         }
+    }
+    .product {
+        background: #EDECE8;
+        height: 500px;
+        padding: 10px;
+
+    }
+    .search-box {
+        position: relative;
+        input {
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 20px;
+            padding: 5px 40px 5px 20px;
+            font-size: 14px;
+            text-align: center;
+            color: @mainColor;
+        }
+        img {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 15px;
+            top: 10px;
+        }
+    }
+
+    .product-box {
+        width: 100%;
+        height: auto;
     }
 }
