@@ -45,6 +45,7 @@
                 <activity v-if="currentTab === 3"></activity>
             </div>
         </div>
+        <car ref="carRef"/>
     </div>
 </template>
 
@@ -52,11 +53,13 @@
     import service from '@/components/service/service'
     import goods from '@/components/goods/goods'
     import activity from '@/components/activity/activity'
+    import car from '@/components/car/car'
     export default {
         components: {
             service,
             goods,
             activity,
+            car
         },
         data () {
             return {

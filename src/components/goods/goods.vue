@@ -15,15 +15,6 @@
                 <li>
                     补水
                 </li>
-                <li>
-                    面膜
-                </li>
-                <li>
-                    润肤
-                </li>
-                <li>
-                    补水
-                </li>
             </ul>
         </div>
         <div class="goods-list">
@@ -71,6 +62,14 @@
                         price: 100,
                         originalPrice: 200
                     },
+                    {
+                        id: 1,
+                        name: '这是商品名称',
+                        summary: '商品简要描述',
+                        url: 'http://m.qpic.cn/psb?/V14IXSk615MNiG/4VcmTqzJmm57mJ8bg2dXziyszStOOJL4fUvAMWPbU3Y!/b/dL4AAAAAAAAA&bo=IAMVAgAAAAARBwQ!&rf=viewer_4',
+                        price: 100,
+                        originalPrice: 200
+                    }
                 ]
             }
         },
