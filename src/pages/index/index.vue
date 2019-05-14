@@ -106,7 +106,6 @@
         },
 
         methods: {
-
             toggleTab (data) {
                this.currentTab = data.id;
             },
@@ -126,6 +125,5 @@
 </script>
 
 <style lang="less">
-    @import '../../../static/css/common';
     @import "index";
 </style>

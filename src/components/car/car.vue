@@ -22,6 +22,5 @@
 </script>
 
 <style lang="less">
-    @import '../../../static/css/common';
     @import "car";
 </style>

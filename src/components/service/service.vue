@@ -72,6 +72,5 @@
 </script>
 
 <style lang="less">
-    @import '../../../static/css/common';
     @import "service";
 </style>
