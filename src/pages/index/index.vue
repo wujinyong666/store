@@ -45,7 +45,7 @@
                 <activity v-if="currentTab === 3"></activity>
             </div>
         </div>
-        <car ref="carRef"/>
+        <car ref="carRef" v-if="currentTab === 2"/>
     </div>
 </template>
 
