@@ -51,5 +51,6 @@
 </script>
 
 <style lang="less">
-   @import "./serve";
+    @import '../../../static/css/common.less';
+    @import "./serve";
 </style>

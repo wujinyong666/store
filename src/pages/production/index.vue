@@ -25,5 +25,6 @@
 </script>
 
 <style lang="less">
+    @import '../../../static/css/common.less';
     @import '../../../static/css/common';
 </style>
